@@ -1,0 +1,71 @@
+html {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: antialiased;
+}
+
+/* general variables sets */
+:root {
+   --primary--palette--set001: #FFA33E;
+   --primary--palette--set002: #FFA219;
+   --primary--palette--set003: #FF9800;
+   --primary--palette--set004: #E48900;
+   --primary--palette--set005: #BE7300;
+   --primary--palette--set006: #B16B00;
+   --primary--palette--set007: #7F4C00;
+   --primary--palette--set008: #402600;
+
+   --second--palette--set001: #B7B7BC;
+   --second--palette--set002: #AAAAAF;
+   --second--palette--set003: #6D6D70;
+   --second--palette--set004: #4C4C70;
+   --second--palette--set005: #373754;
+   --second--palette--set006: #29293D;
+   --second--palette--set007: #323233;
+   --second--palette--set008: #232324;
+
+   --font-brand-set001: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ }
+
+a,abbr,acronym,address,applet,big,blockquote,body,caption,cite,code,dd,del,dfn,div,dl,dt,em,fieldset,form,h1,h2,h3,h4,h5,h6,html,iframe,img,ins,kbd,label,legend,li,object,ol,p,pre,q,s,samp,small,span,strike,strong,sub,sup,table,tbody,td,tfoot,th,thead,tr,tt,ul,var{
+   margin:0;
+   padding:0;
+   border:0;
+   outline:0;
+   font-weight:inherit;
+   font-style:inherit;
+   font-family:inherit;
+   font-size:100%;
+   vertical-align:baseline
+ }
+/* set scroollbar */
+::-webkit-scrollbar{
+   width: 8px;
+   background-color: white;
+}
+
+::-webkit-scrollbar-corner {
+   background-color: white;
+}
+
+::-webkit-scrollbar-track {
+   background-color: white;
+}
+
+/* general item sets */
+*, *::before, *::after {
+   -webkit-box-sizing: inherit;
+      -moz-box-sizing: inherit;
+           box-sizing: inherit;
+               margin: 0;
+              padding: 0;
+               border: 0;
+  }
+  .row::before, .row::after {
+   display: table;
+  }
+  .row::after {
+   clear: both;
+  }

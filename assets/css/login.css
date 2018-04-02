@@ -1,0 +1,19 @@
+/* form login*/
+.form-logo {
+    height: 150px;
+}
+
+.login-form {
+    background: var(--second--palette--set001);
+    width: 360px;
+    margin: 0 auto;
+}
+
+form {
+    margin: 0px 0px;
+}
+
+button:hover.button {
+    cursor: pointer;
+
+}
