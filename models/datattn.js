@@ -1,5 +1,4 @@
 const mongoose = require ('mongoose');
-const bcrypt = require('bcryptjs');
 const config = require('../config/database');
 
 const DatattnSchema = mongoose.Schema({
@@ -74,6 +73,8 @@ const DatattnSchema = mongoose.Schema({
 });
 
 const DataPaper = module.exports = mongoose.model('DataPaper', DatattnSchema);
+
+module.exports = DatattnSchema;
 
 module.exports.getUserById = function(id, callback){
     User.findById(id, callback);

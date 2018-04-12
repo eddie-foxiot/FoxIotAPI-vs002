@@ -3,9 +3,9 @@ const router = express.Router();
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const config = require('../config/database')
-const User = require('../models/users');
+const User = require('./models/users');
 
-router.post('/register', (req, res, next) => {
+router.post('user/register', (req, res, next) => {
     let newUser = new User({
         "name": req.body.name,
         "username": req.body.username,
@@ -23,18 +23,18 @@ router.post('/register', (req, res, next) => {
     });
 });
 
-router.post('/authenticate', (req, res, next) => {
+router.post('user/authenticate', (req, res, next) => {
     const username = req.body.username;
     const password = require.body.password;
 
     User.getUserByUsername(username, (err, user) => {
-        if(err) throw err;
+        if(err) console.log(err);
         if(!user){
             return res.json({success:false, msg: 'User not found'})
         }
 
         User.camparePassWord(password, user.passport, (err, isMatch) => {
-            if(err) throw err;
+            if(err) console.log(err);
             if(isMatch) {
                 const token = jwt.sign(user, config.secret, {
                     expiresIn: 6048000 //1 week

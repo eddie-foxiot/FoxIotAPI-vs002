@@ -6,7 +6,7 @@ const config = require('../config/database')
 const Company = require('../models/company');
 
 //register
-router.post('/register', (req, res, next) => {
+router.post('/register/company', (req, res, next) => {
     let newCompany = new Company({
         company: req.body.company,
         CNPJ: req.body.CNPJ,
@@ -29,9 +29,11 @@ router.post('/register', (req, res, next) => {
 });
 
 //authenticate
-router.post('/authenticate', (req, res, next) => {
+
+router.post('/authenticate/company', (req, res, next) => {
     const company = req.body.company;
     const password = req.body.password;
+    
 
     Company.getCompanyByName(company, (err, company) => {
         if(err) {
@@ -68,11 +70,12 @@ router.post('/authenticate', (req, res, next) => {
             }
         })
     })
+
 })
 
 
 //Profile
-router.get('/profile', passport.authenticate("jwt", {session: false}, (req, res, next) => {
+router.get('/profile/company', passport.authenticate("jwt", {session: false}, (req, res, next) => {
     res.send('PROFILE');
 }));
 

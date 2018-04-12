@@ -28,8 +28,8 @@ client.on('connect', function () {
 client.on('message', function (topic, message) {
   
   // Parse JSON
-  var payload_raw_obj = JSON.parse(message);
-  var payload_fields = payload_raw_obj["payload_fields"]
+  let payload_raw_obj = JSON.parse(message);
+  let payload_fields = payload_raw_obj["payload_fields"];
 
   // message is Buffer
   console.log("*** Received uplink *** \n")

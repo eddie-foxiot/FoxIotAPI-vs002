@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 const DataRecord = require('../models/datattn');
 
 //Criate set for a new_data_record -- criando novo registro de data 
-router.post('/register', (req, res, next) => {
+router.post('/register/data', (req, res, next) => {
     let new_data_record = new DataDevice({
         app_id: req.body.app_id,
         device: req.body.device,
@@ -36,5 +36,7 @@ router.post('/register', (req, res, next) => {
         }
     });
 
-    module.exports = router;
 });
+
+
+module.exports = router;
